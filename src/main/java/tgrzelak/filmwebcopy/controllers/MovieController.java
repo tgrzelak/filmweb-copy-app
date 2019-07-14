@@ -1,9 +1,8 @@
 package tgrzelak.filmwebcopy.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tgrzelak.filmwebcopy.models.Movie;
+import tgrzelak.filmwebcopy.models.dtos.MovieDto;
 import tgrzelak.filmwebcopy.services.MovieService;
 
 import java.util.List;
@@ -22,5 +21,21 @@ public class MovieController {
     public List<Movie> getMovies() {
         return movieService.getMovies();
     }
+
+    @GetMapping("/dto/movies")
+    public List<MovieDto> getMoviesDto(){
+        return movieService.getMoviesDto();
+    }
+
+    @PostMapping("/dto/movies")
+    public void addMovie(@RequestBody MovieDto movieDto) {
+         movieService.addMovie(movieDto);
+    }
+
+    @DeleteMapping("/dto/movies/{movieTitle}")
+    public void deleteMovie(@PathVariable String movieTitle) {
+        movieService.deleteMovie(movieTitle);
+    }
+
 
 }

@@ -1,43 +1,27 @@
-package tgrzelak.filmwebcopy.models;
+package tgrzelak.filmwebcopy.models.dtos;
 
 import lombok.AllArgsConstructor;
-
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
+import tgrzelak.filmwebcopy.models.*;
 import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
-@Table(name = "movie")
-public class Movie {
+public class MovieDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String title;
     private String engTitle;
     private int yearOfProduction;
     private int duration;
     private String description;
-
-    @OneToMany
     private Set<Poster> posters;
-
-    @OneToMany
     private Set<Trailer> trailers;
-
-    @ManyToMany
     private Set<Genre> genres;
-
-    @ManyToMany
     private Set<Country> countries;
-
-    @ManyToMany
     private Set<Actor> actors;
+
 }
