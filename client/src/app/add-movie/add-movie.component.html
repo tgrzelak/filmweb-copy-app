@@ -1,20 +1,30 @@
+<button class="btn btn-success btn-sm" routerLink="/">Do strony głównej</button>
+
 <div class="container">
-    <form class="movie__container" [formGroup]="movieForm" (ngSubmit)="createMovie()"             >
-      <mat-form-field>
-        <input matInput formControlName="title" placeholder="Tytuł filmu">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput formControlName="engTitle" placeholder="Angielski tytuł filmu">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput formControlName="yearOfProduction" placeholder="Rok produkcji">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput formControlName="duration" placeholder="Czas produkcji">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput formControlName="description" placeholder="Opis filmu">
-      </mat-form-field>
-      <button type="submit" class="btn btn-success">Dodaj film</button>
-    </form>
-  </div>
+  <form class="movie__container" [formGroup]="movieForm" (ngSubmit)="createMovie()">
+      <search-select
+      placeholder="Wybierz kraj"
+      width="100%"
+      [autoActiveFirstOption]=true
+      [formControl]="country"
+      [dataSource]="dataSource">
+    </search-select>
+    <mat-form-field>
+      <input matInput formControlName="title" placeholder="Tytuł filmu">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="engTitle" placeholder="Angielski tytuł filmu">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="yearOfProduction" appDigitOnly minlength="4" placeholder="Rok produkcji">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="duration" appDigitOnly maxlength="4" placeholder="Czas produkcji">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput formControlName="description" placeholder="Opis filmu" cols="30" rows="5"></textarea>
+    </mat-form-field>
+
+    <button type="submit" class="btn btn-success">Dodaj film</button>
+  </form>
+</div>

@@ -10,12 +10,15 @@ import { MovieService } from './add-movie/_services/movie.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { DigitOnlyDirective } from './shared/_directives/digit-only.directive';
+import { SearchSelectModule } from '@oasisdigital/angular-material-search-select';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddMovieComponent,
-    MainPageComponent
+    MainPageComponent,
+    DigitOnlyDirective
   ],
   imports: [
     BrowserModule,
@@ -24,13 +27,15 @@ import { MainPageComponent } from './main-page/main-page.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    SearchSelectModule,
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
       closeButton: true,
     })
   ],
   exports: [
-    MatInputModule
+    MatInputModule,
+    DigitOnlyDirective
   ],
   providers: [MovieService],
   bootstrap: [AppComponent]

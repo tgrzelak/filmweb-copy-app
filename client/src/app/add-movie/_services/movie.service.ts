@@ -20,16 +20,16 @@ export class MovieService {
 
 
 
-  getMovies(): Observable<MoviesListDto> {
-    return this._http.get<MoviesListDto>(`${env.BASE_API_URL}${MOVIES_ENDPOINT}`);
+  getMovies(): Observable<MovieDto[]> {
+    return this._http.get<MovieDto[]>(`${env.BASE_API_URL}${MOVIES_ENDPOINT}`);
   }
 
   postMovie(movie: MovieDto): Observable<MovieDto> {
     return this._http.post<MovieDto>(`${env.BASE_API_URL}${MOVIES_ENDPOINT}`, movie, {headers: this.header});
   }
 
-  deleteMovie(title: string): void {
-    this._http.delete(`${env.BASE_API_URL}${MOVIES_ENDPOINT}/${title}`);
+  deleteMovie(title: string): Observable<MoviesListDto> {
+    return this._http.delete<MoviesListDto>(`${env.BASE_API_URL}${MOVIES_ENDPOINT}/${title}`);
   }
 
 }
