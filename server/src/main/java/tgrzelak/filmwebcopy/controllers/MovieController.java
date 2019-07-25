@@ -8,6 +8,7 @@ import tgrzelak.filmwebcopy.services.MovieService;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/v1")
 public class MovieController {
 
@@ -30,6 +31,11 @@ public class MovieController {
     @PostMapping("/dto/movies")
     public void addMovie(@RequestBody MovieDto movieDto) {
          movieService.addMovie(movieDto);
+    }
+
+    @PutMapping("/dto/movies")
+    public void updateMovie(@RequestBody MovieDto movieDto) {
+        movieService.updateMovie(movieDto);
     }
 
     @DeleteMapping("/dto/movies/{movieTitle}")

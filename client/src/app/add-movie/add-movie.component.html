@@ -1,0 +1,20 @@
+<div class="container">
+    <form class="movie__container" [formGroup]="movieForm" (ngSubmit)="createMovie()"             >
+      <mat-form-field>
+        <input matInput formControlName="title" placeholder="Tytuł filmu">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="engTitle" placeholder="Angielski tytuł filmu">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="yearOfProduction" placeholder="Rok produkcji">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="duration" placeholder="Czas produkcji">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="description" placeholder="Opis filmu">
+      </mat-form-field>
+      <button type="submit" class="btn btn-success">Dodaj film</button>
+    </form>
+  </div>

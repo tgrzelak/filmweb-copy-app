@@ -1,0 +1,10 @@
+<nav class="container">
+  <button routerLink="/admin-panel">Panel Admina</button>
+  <div class="movie" *ngFor="let movie of movies">
+    <p>Tytuł: {{movie.title}}</p>
+    <p>Ang tytuł: {{movie.engTitle}}</p>
+    <p>Rok produkcji: {{movie.yearOfProduction}}</p>
+    <p>Czas trwania: {{movie.duration}}</p>
+    <p>Opis: {{movie.description}}</p>
+  </div>
+</nav>

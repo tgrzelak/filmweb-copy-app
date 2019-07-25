@@ -36,6 +36,25 @@ public class MovieService {
         movieRepository.save(movieMapper.reverseMap(movieDto));
     }
 
+    public void updateMovie(MovieDto movieDto) {
+        movieRepository
+                .findMovieByTitle(movieDto.getTitle())
+                .ifPresent(m -> {
+                    m.setTitle(movieDto.getTitle());
+                    m.setEngTitle(movieDto.getEngTitle());
+                    m.setYearOfProduction(movieDto.getYearOfProduction());
+                    m.setDuration(movieDto.getDuration());
+                    m.setDescription(movieDto.getDescription());
+                    m.setPosters(movieDto.getPosters());
+                    m.setTrailers(movieDto.getTrailers());
+                    m.setGenres(movieDto.getGenres());
+                    m.setCountries(movieDto.getCountries());
+                    m.setActors(movieDto.getActors());
+
+                    movieRepository.save(m);
+                });
+    }
+
     public void deleteMovie(String movieTitle) {
         movieRepository.deleteByTitle(movieTitle);
     }
