@@ -1,11 +1,10 @@
-<nav class="container">
-  <button routerLink="/admin-panel">Panel Admina</button>
+<div class="container">
   <div class="movie" *ngFor="let movie of movies, let i = index">
     <p>Tytuł: {{movie.title}}</p>
     <p>Ang tytuł: {{movie.engTitle}}</p>
     <p>Rok produkcji: {{movie.yearOfProduction}}</p>
     <p>Czas trwania: {{movie.duration}}</p>
     <p>Opis: {{movie.description}}</p>
-    <button class="btn btn-sm btn-danger" (click)="deleteMovie(movie.title, i)">Usuń film</button>
+    <button class="btn btn-sm btn-danger" (click)="deleteMovie(movie.title, i-1)">Usuń film</button>
   </div>
-</nav>
+</div>

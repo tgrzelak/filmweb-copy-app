@@ -12,13 +12,15 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DigitOnlyDirective } from './shared/_directives/digit-only.directive';
 import { SearchSelectModule } from '@oasisdigital/angular-material-search-select';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddMovieComponent,
     MainPageComponent,
-    DigitOnlyDirective
+    DigitOnlyDirective,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

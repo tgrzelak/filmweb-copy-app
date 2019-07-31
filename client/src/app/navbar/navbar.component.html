@@ -1,0 +1,38 @@
+<nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/strona-główna">Filmweb Copy</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto nav-list">
+
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/strona-główna">Strona główna <span class="sr-only">(current)</span></a>
+      </li>
+
+      <div class="right-side">
+        <li class="nav-item active">
+          <a class="nav-link panel-admin" routerLink="/admin-panel">Panel Admina</a>
+        </li>
+
+        <li class="nav-item dropdown account">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Konto
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Zaloguj</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Zarejstruj się</a>
+          </div>
+        </li>
+      </div>
+
+
+    </ul>
+  </div>
+
+</nav>

@@ -21,7 +21,7 @@ export class AddMovieComponent implements OnInit {
 
   dataSource: DataSource;
 
-  country = new FormControl(null, [Validators.required]);
+  countries = new FormControl(null, [Validators.required]);
 
   movieForm: FormGroup;
   movie: MovieDto = {
@@ -59,7 +59,7 @@ export class AddMovieComponent implements OnInit {
         return http.get<Country>(apiURL + '/' + value).pipe(
           map(e => ({
             value: e.name,
-            display: `${e.name} ${e.code}`,
+            display: `${e.name}`,
             details: {}
           }))
         );
@@ -73,7 +73,7 @@ export class AddMovieComponent implements OnInit {
         }).pipe(
           map(list => list.map(e => ({
             value: e.name,
-            display: `${e.name} ${e.code}`,
+            display: `${e.name}`,
             details: {}
           }))));
       }

@@ -1,12 +1,10 @@
-<button class="btn btn-success btn-sm" routerLink="/">Do strony głównej</button>
-
 <div class="container">
   <form class="movie__container" [formGroup]="movieForm" (ngSubmit)="createMovie()">
       <search-select
       placeholder="Wybierz kraj"
       width="100%"
       [autoActiveFirstOption]=true
-      [formControl]="country"
+      [formControl]="countries"
       [dataSource]="dataSource">
     </search-select>
     <mat-form-field>
