@@ -45,7 +45,7 @@ public class MovieService {
                     m.setYearOfProduction(movieDto.getYearOfProduction());
                     m.setDuration(movieDto.getDuration());
                     m.setDescription(movieDto.getDescription());
-                    m.setPosters(movieDto.getPosters());
+                    m.setPoster(movieDto.getPoster());
                     m.setTrailers(movieDto.getTrailers());
                     m.setGenres(movieDto.getGenres());
                     m.setCountries(movieDto.getCountries());

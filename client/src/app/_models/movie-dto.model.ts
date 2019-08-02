@@ -4,4 +4,5 @@ export interface MovieDto {
   yearOfProduction: number;
   duration: number;
   description: string;
+  poster: string;
 }

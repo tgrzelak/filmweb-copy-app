@@ -29,7 +29,8 @@ export class AddMovieComponent implements OnInit {
     engTitle: null,
     yearOfProduction: null,
     duration: null,
-    description: null
+    description: null,
+    poster: null
   };
 
   constructor(
@@ -44,7 +45,8 @@ export class AddMovieComponent implements OnInit {
       engTitle: [''],
       yearOfProduction: [''],
       duration: [''],
-      description: ['']
+      description: [''],
+      poster: ['']
     });
 
     this.dataSource = {
@@ -101,6 +103,7 @@ export class AddMovieComponent implements OnInit {
     this.movie.yearOfProduction = this.movieForm.value.yearOfProduction;
     this.movie.duration = this.movieForm.value.duration;
     this.movie.description = this.movieForm.value.description;
+    this.movie.poster = this.movieForm.value.poster;
 
     this.movieService.postMovie(this.movie).subscribe((movie: MovieDto) => {
       this.toastr.success(`Film "${this.movie.title}" dodano do bazy danych`, `DODANO NOWY FILM !`);

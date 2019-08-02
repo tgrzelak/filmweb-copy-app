@@ -13,6 +13,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { DigitOnlyDirective } from './shared/_directives/digit-only.directive';
 import { SearchSelectModule } from '@oasisdigital/angular-material-search-select';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DurationConverter } from './shared/_pipes/duration-converter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddMovieComponent,
     MainPageComponent,
     DigitOnlyDirective,
-    NavbarComponent
+    NavbarComponent,
+    DurationConverter
   ],
   imports: [
     BrowserModule,

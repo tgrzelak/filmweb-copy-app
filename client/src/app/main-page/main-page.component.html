@@ -1,10 +1,82 @@
 <div class="container">
-  <div class="movie" *ngFor="let movie of movies, let i = index">
-    <p>Tytuł: {{movie.title}}</p>
-    <p>Ang tytuł: {{movie.engTitle}}</p>
-    <p>Rok produkcji: {{movie.yearOfProduction}}</p>
-    <p>Czas trwania: {{movie.duration}}</p>
-    <p>Opis: {{movie.description}}</p>
-    <button class="btn btn-sm btn-danger" (click)="deleteMovie(movie.title, i-1)">Usuń film</button>
+  <div class="movies" *ngFor="let movie of movies, let i = index">
+    <div class="movie">
+      <img class="movie__poster" src="{{movie.poster}}" alt="">
+      <div class="main">
+        <div class="movie__header">
+          <h1>{{movie.title}}</h1>
+          <span>({{movie.yearOfProduction}})</span>
+        </div>
+        <div class="movie__engTitle">
+          <p>{{movie.title === movie.engTitle ? ''  : movie.engTitle}}</p>
+        </div>
+        <div class="movie__duration">
+          <p>{{movie.duration | durationConverter}}</p>
+        </div>
+        <div class="movie__description">
+          <p>{{movie.description}}</p>
+        </div>
+        <div class="movie__button">
+          <button class="trailer-button">Zobacz zwiastun</button>
+        </div>
+        <div class="movie__info">
+          <table>
+            <tbody>
+              <tr>
+                <th>reżyseria:</th>
+                <td>
+                  <ul>
+                    <li>Damien Chazelle</li>
+                  </ul>
+                </td>
+              </tr>
+
+              <tr>
+                <th>scenariusz:</th>
+                <td>
+                  <ul>
+                    <li>Damien Chazelle</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>gatunek:</th>
+                <td>
+                  <ul>
+                    <li>Dramat</li>
+                    <li>Muzyczny</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>produkcja:</th>
+                <td>
+                  <ul>
+                    <li>USA</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>premiera:</th>
+                <td>
+                  <ul>
+                    <li>2 stycznia 2015 (Polska) 16 stycznia 2014 (świat)</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>boxoffice:</th>
+                <td>
+                  <ul>
+                    <li>$33 020 729</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- <button class="btn btn-sm btn-danger" (click)="deleteMovie(movie.title, i)">Usuń film</button> -->
   </div>
 </div>

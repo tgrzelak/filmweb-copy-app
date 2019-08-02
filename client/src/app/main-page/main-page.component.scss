@@ -1,7 +1,76 @@
 .container {
   margin-top: 75px;
-  .movie {
-    margin-bottom: 30px;
-    border: 1px solid black;
+  padding: 0;
+  .movies {
+    .movie {
+      display: flex;
+      margin-bottom: 60px;
+      // border: 1px solid black;
+      &__poster {
+        height: 300px;
+      }
+      &__header {
+        display: flex;
+        h1 {
+          margin: 0;
+          font-size: 32px;
+          font-weight: 400;
+          &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+          }
+        }
+        span {
+          margin-left: 10px;
+          font-size: 16px;
+          align-self: flex-end;
+        }
+      }
+      &__engTitle {
+        color: #808080;
+      }
+      &__duration {
+        font-size: 14px;
+      }
+      &__description {
+        font-size: 14px;
+      }
+      &__button {
+        .trailer-button {
+          background-color: #ffc404;
+          border: none;
+          font-size: 13px;
+          padding: 10px 30px;
+          &:hover {
+            background-color: #ffd651;
+          }
+        }
+      }
+      &__info {
+        th {
+          color: #7f7f7f;
+          font-weight: 400;
+
+        }
+        ul {
+          list-style-type: none;
+          margin: 0;
+          li {
+            display: inline;
+            color: #976103;
+            &:hover {
+              text-decoration: underline;
+              cursor: pointer;
+            }
+            &:after {
+              content: ", ";
+            }
+          }
+        }
+      }
+    }
+    .main {
+      margin-left: 20px;
+    }
   }
 }

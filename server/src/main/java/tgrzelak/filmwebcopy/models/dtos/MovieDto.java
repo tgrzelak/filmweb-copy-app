@@ -18,7 +18,7 @@ public class MovieDto {
     private int yearOfProduction;
     private int duration;
     private String description;
-    private Set<Poster> posters;
+    private String poster;
     private Set<Trailer> trailers;
     private Set<Genre> genres;
     private Set<Country> countries;

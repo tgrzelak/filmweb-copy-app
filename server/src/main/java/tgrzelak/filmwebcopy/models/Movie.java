@@ -25,9 +25,7 @@ public class Movie {
     private int yearOfProduction;
     private int duration;
     private String description;
-
-    @OneToMany
-    private Set<Poster> posters;
+    private String poster;
 
     @OneToMany
     private Set<Trailer> trailers;

@@ -20,8 +20,9 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
     this.movieService.getMovies().subscribe((movies: MovieDto[]) => {
+      console.log(movies);
       this.movies = movies;
-    })
+    });
   }
 
   deleteMovie(title: string, id: number) {
@@ -29,7 +30,7 @@ export class MainPageComponent implements OnInit {
       this.movies.splice(id, 1);
       this.toastr.error(`Usunięto film: ${this.movies[id].title}`, `USUNIĘTO FILM !`, {
         timeOut: 5000
-      })
+      });
     }
     );
   }
